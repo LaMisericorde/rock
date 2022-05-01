@@ -1,14 +1,14 @@
 let invalidSelection = 0;
 
 function computerPlay() {
-    const computerHand = Math.floor(Math.random() * 3 );
-    switch (computerHand) {
+    const computerSelection = Math.floor(Math.random() * 3 );
+    switch (computerSelection) {
         case 0:
-            return "rock";
+            return "ROCK";
         case 1:
-            return "paper";
+            return "PAPER";
         case 2:
-            return "scissors";
+            return "SCISSORS";
         default:
             return "Error in computerPlay()";
     }
@@ -31,8 +31,27 @@ function humanPlay() {
         const playerSelection = prompt("Invalid selection, please choose rock, paper or scissors:").toUpperCase();
         invalidSelection = 0;
         return verifyPlayerSelection(playerSelection);
-    }
-    
+    }  
 }
 
-console.log(humanPlay());
+function singleRound() {
+    const playerSelection = humanPlay();
+    const computerSelection = computerPlay();
+    if (playerSelection === computerSelection) {
+        return "Tie";
+    } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
+        return "You lose! Paper beats Rock!";
+    } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
+        return "You win! Rock beats Scissors!";
+    } else if (playerSelection == "PAPER" && computerSelection === "ROCK") {
+        return "You win! Paper beats Rock!";
+    } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
+        return "You lose! Scissors beat Paper!";
+    } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
+        return "You lose! Rock beats Scissors!";
+    } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
+        return "You win! Scissors beat Paper!";
+    }
+}
+
+console.log(singleRound());
