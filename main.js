@@ -1,3 +1,5 @@
+let invalidSelection = 0;
+
 function computerPlay() {
     const computerHand = Math.floor(Math.random() * 3 );
     switch (computerHand) {
@@ -14,15 +16,23 @@ function computerPlay() {
 
 function verifyPlayerSelection(playerSelection) {
     if (!((playerSelection === "ROCK") || (playerSelection === "PAPER") || (playerSelection === "SCISSORS"))) {
-        return "Incorrect selection";
+        invalidSelection = 1;
+        return humanPlay();
     } else {
         return playerSelection;
     }
 }
 
-function askPlayer() {
-    const playerSelection = prompt("Your selection:").toUpperCase();
-    console.log(verifyPlayerSelection(playerSelection));
+function humanPlay() {
+    if (invalidSelection === 0) {
+        const playerSelection = prompt("Your selection:").toUpperCase();
+        return verifyPlayerSelection(playerSelection);
+    } else {
+        const playerSelection = prompt("Invalid selection, please choose rock, paper or scissors:").toUpperCase();
+        invalidSelection = 0;
+        return verifyPlayerSelection(playerSelection);
+    }
+    
 }
 
-askPlayer();
+console.log(humanPlay());
