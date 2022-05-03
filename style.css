@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.title {
+    margin: 10vh 10vh;
+}
+
+.buttons, .text {
+    margin-bottom: 5vh;
+}
+
+.btn {
+    width: 10vw;
+    height: 5vh;
+    margin: 0 2vw;
+    font-weight: bold;
+}
+
+.score-text {
+    margin-bottom: 1vh;
+}
+
+.score {
+    font-size: 20px;
+    font-weight: bold;
+}
