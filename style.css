@@ -15,6 +15,11 @@ html {
     margin: 10vh 10vh;
 }
 
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
 .buttons, .text {
     margin-bottom: 5vh;
 }
@@ -33,4 +38,18 @@ html {
 .score {
     font-size: 20px;
     font-weight: bold;
+}
+
+.text {
+    font-size: 20px;
+}
+
+.reset-div {
+    display: flex;
+    justify-content: center;
+}
+
+#reset-btn {
+    margin-top: 5vh;
+    display: none;
 }
